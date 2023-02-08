@@ -62,12 +62,12 @@ function App() {
             justifyContent="center"
             alignItems="center"
           >
-            <Heading as="h1" fontSize="4xl" fontWeight={700} mb="5">
+            <Heading as="h1" fontSize="4xl" fontWeight={800} mb="10">
               Questão {currentQuestion + 1}/{questions.length}
             </Heading>
-            <Heading fontSize="2xl" as="h2" fontWeight={400}>
+            <Text fontSize="larger" as="h2" fontWeight={400}>
               {questions[currentQuestion].question}
-            </Heading>
+            </Text>
           </Box>
 
           <Box

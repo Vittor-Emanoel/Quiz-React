@@ -24,22 +24,3 @@ export const questions = [
     ],
   },
 ]
-
-// let score = 0
-
-// questions.forEach((question, index) => {
-//   // const radio = form[index]
-
-//   let answer
-
-//   // for (let i = 0; i < questions.length; i++) {
-//   //   // // if (radio[i].checked) {
-//   //   //   answer = radio[i].value
-//   // //   //   break
-//   // //   }
-//   // // }
-
-//   // // if (questions[index].answers[answer].correct) {
-//   // //   score++
-//   // // }
-//   // )
