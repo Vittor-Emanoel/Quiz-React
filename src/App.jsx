@@ -1,3 +1,4 @@
+import { Button } from '@chakra-ui/react'
 import { useState } from 'react'
 import { questions } from '../questions'
 import './App.css'
@@ -13,14 +14,33 @@ function App() {
   const handleClick = (correct) => {
     if (correct) {
       setScore(score + 1)
-      const nextQuestion = currentQuestion + 1
-      if (nextQuestion < questions.length) {
-        setCurrentQuestion(nextQuestion)
-      } else {
-        setShowScore(true)
-      }
+      nextQuestion()
+    } else {
+      nextQuestion()
     }
   }
+
+  const nextQuestion = () => {
+    const nextQuestion = currentQuestion + 1
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion)
+    } else {
+      setShowScore(true)
+    }
+  }
+
+  console.log(score)
+  console.log(score)
+
+  // if (correct) {
+  //   setScore(score + 1)
+  //   const nextQuestion = currentQuestion + 1
+  //   if (nextQuestion < questions.length) {
+  //     setCurrentQuestion(nextQuestion)
+  //   } else {
+  //     setShowScore(true)
+  //   }
+  // }]
 
   return (
     <div className="app">
@@ -39,13 +59,15 @@ function App() {
 
           <section className="answer-section">
             {questions[currentQuestion].answers.map((item) => (
-              <button key={item.text} onClick={() => handleClick(item.correct)}>
+              <Button
+                colorScheme="purple"
+                size="lg"
+                key={item.text}
+                onClick={() => handleClick(item.correct)}
+              >
                 {item.text}
-              </button>
+              </Button>
             ))}
-
-            {/*            Progress bar     
-            {currentQuestion} */}
           </section>
         </>
       )}
