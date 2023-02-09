@@ -79,7 +79,6 @@ function App() {
             mt="77"
             width="full"
             p="5"
-            border="1px solid red"
             display="flex"
             justifyContent="center"
             alignItems="center"
