@@ -78,15 +78,19 @@ function App() {
             className="answer-section"
             mt="77"
             width="full"
+            p="5"
+            border="1px solid red"
             display="flex"
             justifyContent="center"
             alignItems="center"
             gap="1.1rem"
+            sm="flex"
           >
             {questions[currentQuestion].answers.map((item) => (
               <Button
                 colorScheme="purple"
-                size="lg"
+                size="sm"
+                p="7"
                 key={item.text}
                 onClick={() => handleClick(item.correct)}
               >
