@@ -1,26 +1,34 @@
 export const questions = [
   {
-    question: 'Qual o primeiro livro da bíblia?',
+    question: 'Quantos leprosos voltaram para agradecer a Jesus?',
     answers: [
-      { text: 'Êxodo', correct: false },
-      { text: 'Levítico', correct: false },
-      { text: 'Genesis', correct: true },
+      { text: '10', correct: false },
+      { text: '1', correct: false },
+      { text: 'Nenhum', correct: true },
     ],
   },
   {
-    question: 'Qual a capital de Israel?',
+    question: 'Na transfiguração, quem apareceu ao lado de Jesus?',
     answers: [
-      { text: 'Tel Aviv', correct: false },
-      { text: 'Haifa', correct: false },
-      { text: 'Jerusalem', correct: true },
+      { text: 'Enoque e Elias', correct: false },
+      { text: 'Elias e Moisés', correct: true },
+      { text: 'Abraão e Isaque', correct: false },
     ],
   },
   {
-    question: 'Quem foi o rei mais sábio da bíblia?',
+    question: 'Qual desses nomes não era profeta?',
     answers: [
-      { text: 'Davi', correct: false },
-      { text: 'Salomão', correct: true },
-      { text: 'Isaias', correct: false },
+      { text: 'Davi', correct: true },
+      { text: 'Ezequiel', correct: false },
+      { text: 'Jeremias', correct: false },
+    ],
+  },
+  {
+    question: 'Elias subiu aos céus em carros de fogo?',
+    answers: [
+      { text: 'Sim', correct: false },
+      { text: 'Não', correct: true },
+      { text: 'Acho que sim rs', correct: false },
     ],
   },
 ]

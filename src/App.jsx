@@ -57,7 +57,8 @@ function App() {
           <Box
             className="question-section"
             width="full"
-            pt="44"
+            p="10"
+            pt="40"
             margin=" 0 auto"
             display="flex"
             flexDirection="column"
