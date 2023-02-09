@@ -1,8 +1,15 @@
 import { Box, Button, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ToggleColorMode from '../../components/ToggleColorMode'
 
 const HomePage = () => {
+  const navigate = useNavigate()
+
+  const handleQuiz = () => {
+    navigate('/quiz')
+  }
+
   return (
     <>
       <ToggleColorMode />
@@ -29,7 +36,7 @@ const HomePage = () => {
             borderRadius="lg"
           />
         </Stack>
-        <Button mt="3" p="6" colorScheme="purple">
+        <Button mt="3" p="6" colorScheme="purple" onClick={handleQuiz}>
           Iniciar
         </Button>
       </Box>
