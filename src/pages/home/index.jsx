@@ -22,11 +22,9 @@ const HomePage = () => {
         margin="0 auto"
         mt="2"
       >
-        <Heading fontSize="5xl">Quiz Bíblico 📖</Heading>
-        <Text mt="3" fontWeight="500">
-          Teste seu conhecimento bíblico.
-        </Text>
-
+        <Heading textAlign="center">Quiz Bíblico 📖</Heading>
+        <Text mt="3" fontWeight="500" w="full"></Text>
+        Teste seu conhecimento bíblico.
         <Stack boxSize="sm" mt="5">
           <Image
             src="https://images.unsplash.com/photo-1604882737321-e6937fd6f519?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -34,6 +32,7 @@ const HomePage = () => {
             objectFit="cover"
             h="100%"
             borderRadius="lg"
+            p="5"
           />
         </Stack>
         <Button mt="3" p="6" colorScheme="purple" onClick={handleQuiz}>
