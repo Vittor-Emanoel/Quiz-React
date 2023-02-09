@@ -48,7 +48,7 @@ function App() {
       {showScore ? (
         <Box mt="60">
           <Text fontSize="3xl" className="showScore-section">
-            Você acerto {score} de {questions.length}
+            Você acertou {score} de {questions.length}
           </Text>
         </Box>
       ) : (
