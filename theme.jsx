@@ -9,7 +9,7 @@ const theme = extendTheme({
     global: {
       body: {
         margin: 0,
-        'font-family': 'sans-serif,roboto, inter',
+        'font-family': 'sans-serif, Roboto, inter',
         '-webkit-font-smoothing': 'antialiased',
         '-moz-osx-font-smoothing': 'grayscale',
       },
