@@ -1,8 +1,11 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { questions } from '../../../questions'
 
 const QuizPage = () => {
+  const navigate = useNavigate()
+
   //Questão atual
   const [currentQuestion, setCurrentQuestion] = useState(0)
   //Score atual
@@ -28,6 +31,10 @@ const QuizPage = () => {
     }
   }
 
+  const handleBack = () => {
+    navigate('/')
+  }
+
   return (
     <Box className="app" w="full" h="100">
       {showScore ? (
@@ -38,6 +45,7 @@ const QuizPage = () => {
         </Box>
       ) : (
         <>
+          <Button onClick={handleBack}>Voltar</Button>
           <Box
             className="question-section"
             width="full"
