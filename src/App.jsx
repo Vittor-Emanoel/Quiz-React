@@ -2,6 +2,7 @@ import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 import { questions } from '../questions'
 import './App.css'
+import ToggleColorMode from './components/ToggleColorMode'
 
 function App() {
   //Questão atual
@@ -52,6 +53,7 @@ function App() {
         </Box>
       ) : (
         <>
+          <ToggleColorMode />
           <Box
             className="question-section"
             width="full"
@@ -65,6 +67,7 @@ function App() {
             <Heading as="h1" fontSize="4xl" fontWeight={800} mb="10">
               Questão {currentQuestion + 1}/{questions.length}
             </Heading>
+
             <Text fontSize="larger" as="h2" fontWeight={400}>
               {questions[currentQuestion].question}
             </Text>
