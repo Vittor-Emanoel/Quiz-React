@@ -13,6 +13,11 @@ const QuizPage = () => {
   //Mostra os acertos
   const [showScore, setShowScore] = useState(false)
 
+  //pegar questões erradas.
+  const [wrongQuestions, setWrongQuestions] = useState(0)
+
+  const [showQuestion, setShowQuestion] = useState([])
+
   const handleClick = (correct) => {
     if (correct) {
       setScore(score + 1)
@@ -24,6 +29,7 @@ const QuizPage = () => {
 
   const nextQuestion = () => {
     const nextQuestion = currentQuestion + 1
+    setWrongQuestions(nextQuestion)
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion)
     } else {
@@ -41,6 +47,11 @@ const QuizPage = () => {
         <Box mt="60">
           <Text fontSize="3xl" className="showScore-section">
             Você acertou {score} de {questions.length}
+          </Text>
+          <Text fontSize="3xl" className="showScore-section">
+            {/* {showQuestion.map((item) => (
+              <li>{item.question}</li>
+            ))} */}
           </Text>
         </Box>
       ) : (
