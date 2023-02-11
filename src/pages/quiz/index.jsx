@@ -59,19 +59,16 @@ const QuizPage = () => {
           alignItems="center"
           p="2"
         >
-          <Text fontSize="3xl" fontWeight={800} className="showScore-section">
+          <Text fontSize="4xl" fontWeight={800} className="showScore-section">
             Você acertou {score} de {questions.length}
           </Text>
-          <Text
-            className="showScore-section"
-            fontSize="2xl"
-            fontWeight={600}
-            marginBlock="2"
-          >
-            {score >= 4 ? 'Parabéns! 🎉' : 'Você errou, revise!'}
+          <Text className="showScore-section" fontSize="2xl" marginBlock="4">
+            {score >= 4
+              ? 'Parabéns! 🎉'
+              : 'Você errou, revise as seguintes questões:'}
           </Text>
           {questionWrong.map((item, index) => (
-            <Text fontSize="lg" fontWeight="light" key={index}>
+            <Text fontSize="md" fontWeight="light" key={index}>
               {item.question}
             </Text>
           ))}
