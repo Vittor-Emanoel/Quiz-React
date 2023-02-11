@@ -13,23 +13,26 @@ const QuizPage = () => {
   //Mostra os acertos
   const [showScore, setShowScore] = useState(false)
 
-  //pegar questões erradas.
-  const [wrongQuestions, setWrongQuestions] = useState(0)
+  //
+  const [questionWrong, setQuestionWrong] = useState([])
 
-  const [showQuestion, setShowQuestion] = useState([])
-
-  const handleClick = (correct) => {
+  function handleClick(correct) {
     if (correct) {
       setScore(score + 1)
       nextQuestion()
     } else {
-      nextQuestion()
+      nextQuestion(correct)
     }
   }
 
-  const nextQuestion = () => {
+  function nextQuestion(correct) {
     const nextQuestion = currentQuestion + 1
-    setWrongQuestions(nextQuestion)
+    if (correct === false) {
+      setQuestionWrong((prevState) => [
+        ...prevState,
+        questions[currentQuestion],
+      ])
+    }
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion)
     } else {
@@ -41,18 +44,37 @@ const QuizPage = () => {
     navigate('/')
   }
 
+  {
+    console.log({ questionWrong })
+  }
+
   return (
     <Box className="app" w="full" h="100">
       {showScore ? (
-        <Box mt="60">
-          <Text fontSize="3xl" className="showScore-section">
+        <Box
+          mt="60"
+          w="full"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          p="2"
+        >
+          <Text fontSize="3xl" fontWeight={800} className="showScore-section">
             Você acertou {score} de {questions.length}
           </Text>
-          <Text fontSize="3xl" className="showScore-section">
-            {/* {showQuestion.map((item) => (
-              <li>{item.question}</li>
-            ))} */}
+          <Text
+            className="showScore-section"
+            fontSize="2xl"
+            fontWeight={600}
+            marginBlock="2"
+          >
+            {score >= 4 ? 'Parabéns! 🎉' : 'Você errou, revise!'}
           </Text>
+          {questionWrong.map((item, index) => (
+            <Text fontSize="lg" fontWeight="light" key={index}>
+              {item.question}
+            </Text>
+          ))}
         </Box>
       ) : (
         <>
