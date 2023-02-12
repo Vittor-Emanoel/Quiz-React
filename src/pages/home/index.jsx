@@ -22,7 +22,7 @@ const HomePage = () => {
       <ToggleColorMode />
 
       <Box
-        width="40%"
+        width={{ base: '85%', sm: '85%', md: '40%', lg: '40%' }}
         height="500px"
         display="flex"
         flexDirection="column"
@@ -52,7 +52,7 @@ const HomePage = () => {
           mt="50"
           colorScheme="purple"
           onClick={handleQuiz}
-          width={{ base: 'full', md: 'full', lg: 'lg' }}
+          width={{ base: 'full', sm: 'full', md: 'full', lg: 'full' }}
         >
           Iniciar
         </Button>
