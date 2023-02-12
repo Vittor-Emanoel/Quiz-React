@@ -1,5 +1,7 @@
-# Quiz-React![ss](https://user-images.githubusercontent.com/55211291/218292414-330947ed-9734-45ab-b614-ceff6076a929.png)
+![ss](https://user-images.githubusercontent.com/55211291/218293157-2ba6b536-2f28-4092-8505-59e922e66454.png)
 
+
+# Quiz-Bíblico
 Quiz é o nome de um jogo de questionários que tem como objetivo fazer uma avaliação dos conhecimentos sobre determinado assunto.
 
 Preview: https://quiz-react-blond.vercel.app/quiz
