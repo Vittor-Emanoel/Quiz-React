@@ -71,7 +71,7 @@ const QuizPage = () => {
             fontWeight="medium"
             textAlign="center"
           >
-            {score >= 4 ? 'Parabéns! 🎉' : 'Revise as seguintes questões:'}
+            {score >= 4 ? 'Parabéns! 🎉' : 'Errou:'}
           </Text>
           {questionWrong.map((item, index) => (
             <Text
