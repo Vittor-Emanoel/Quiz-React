@@ -9,6 +9,7 @@ const theme = extendTheme({
     global: {
       body: {
         margin: 0,
+        padding: 0,
         fontFamily: 'Poppins, Inter',
       },
       code: {

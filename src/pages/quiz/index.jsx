@@ -2,6 +2,7 @@ import { Box, Button, Heading, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { questions } from '../../../questions'
+import ToggleColorMode from '../../components/ToggleColorMode'
 
 const QuizPage = () => {
   const navigate = useNavigate()
@@ -44,38 +45,52 @@ const QuizPage = () => {
     navigate('/')
   }
 
-  {
-    console.log({ questionWrong })
-  }
-
   return (
-    <Box className="app" w="full" h="100">
+    <Box w="full" h="100">
       {showScore ? (
         <Box
           mt="60"
           w="full"
           display="flex"
           flexDirection="column"
+          justifyContent="center"
           alignItems="center"
           p="2"
         >
-          <Text fontSize="4xl" fontWeight={800} className="showScore-section">
+          <Text
+            fontWeight={800}
+            textAlign="center"
+            fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+          >
             Você acertou {score} de {questions.length}
           </Text>
-          <Text className="showScore-section" fontSize="2xl" marginBlock="4">
+          <Text
+            fontSize="2xl"
+            marginBlock="4"
+            fontWeight="medium"
+            textAlign="center"
+          >
             {score >= 4
               ? 'Parabéns! 🎉'
               : 'Você errou, revise as seguintes questões:'}
           </Text>
           {questionWrong.map((item, index) => (
-            <Text fontSize="md" fontWeight="light" key={index}>
+            <Text
+              fontSize="2xl"
+              textAlign="center"
+              fontWeight="light"
+              key={index}
+            >
               {item.question}
             </Text>
           ))}
         </Box>
       ) : (
         <>
-          <Button onClick={handleBack}>Voltar</Button>
+          <Button onClick={handleBack} mr="50px">
+            Voltar
+          </Button>
+          <ToggleColorMode />
           <Box
             className="question-section"
             width="full"
@@ -90,7 +105,6 @@ const QuizPage = () => {
             <Heading as="h1" fontSize="4xl" fontWeight={800} mb="10">
               Questão {currentQuestion + 1}/{questions.length}
             </Heading>
-
             <Text fontSize="larger" as="h2" fontWeight={400}>
               {questions[currentQuestion].question}
             </Text>
@@ -98,20 +112,25 @@ const QuizPage = () => {
 
           <Box
             className="answer-section"
-            mt="77"
             width="full"
             p="5"
             display="flex"
+            flexDirection="column"
             justifyContent="center"
             alignItems="center"
             gap="1.1rem"
             sm="flex"
+            md-
           >
             {questions[currentQuestion].answers.map((item) => (
               <Button
                 colorScheme="purple"
                 size="sm"
                 p="7"
+                width={{ base: 'full', md: 'full', lg: 'lg' }}
+                sm:w="full"
+                display="flex"
+                justifyContent="flex-start"
                 key={item.text}
                 onClick={() => handleClick(item.correct)}
               >
