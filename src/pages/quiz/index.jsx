@@ -94,9 +94,9 @@ const QuizPage = () => {
           </Button>
           <ToggleColorMode />
           <Box
-            className="question-section"
             width="full"
             p="10"
+            mt="14"
             display="flex"
             flexDirection="column"
             justifyContent="center"
