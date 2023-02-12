@@ -50,18 +50,18 @@ const QuizPage = () => {
       {showScore ? (
         <Box
           m="0 auto"
-          height="100vh"
           w="full"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
+          mt="24"
           p="2"
         >
           <Text
             fontWeight={800}
             textAlign="center"
-            fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
+            fontSize={{ base: '3xl', md: '4xl', lg: '4xl' }}
           >
             Você acertou {score} de {questions.length}
           </Text>
@@ -71,9 +71,7 @@ const QuizPage = () => {
             fontWeight="medium"
             textAlign="center"
           >
-            {score >= 4
-              ? 'Parabéns! 🎉'
-              : 'Você errou, revise as seguintes questões:'}
+            {score >= 4 ? 'Parabéns! 🎉' : 'Revise as seguintes questões:'}
           </Text>
           {questionWrong.map((item, index) => (
             <Text
