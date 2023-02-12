@@ -49,7 +49,8 @@ const QuizPage = () => {
     <Box w="full" h="100">
       {showScore ? (
         <Box
-          mt="60"
+          m="0 auto"
+          height="100vh"
           w="full"
           display="flex"
           flexDirection="column"
@@ -80,6 +81,7 @@ const QuizPage = () => {
               textAlign="center"
               fontWeight="light"
               key={index}
+              mt="10"
             >
               {item.question}
             </Text>
@@ -95,8 +97,6 @@ const QuizPage = () => {
             className="question-section"
             width="full"
             p="10"
-            pt="40"
-            margin=" 0 auto"
             display="flex"
             flexDirection="column"
             justifyContent="center"
